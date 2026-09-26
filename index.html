@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rafik Shah | Technical Educator & Founder</title>
+
+    <meta name="description"
+          content="Rafik Shah — Technical Educator, Software Developer and Founder of CodexPetra.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Inter, Arial, sans-serif;
+            background: #ffffff;
+            color: #171717;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.94);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .nav-content {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 800;
+            color: #6d3df5;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .nav-links a:hover {
+            color: #6d3df5;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 110px 0 100px;
+            text-align: center;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 7px 14px;
+            border: 1px solid #e3d9ff;
+            border-radius: 30px;
+            color: #6d3df5;
+            background: #faf8ff;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            margin: auto;
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.05;
+            letter-spacing: -3px;
+        }
+
+        .hero h1 span {
+            color: #6d3df5;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: 25px auto;
+            color: #666;
+            font-size: 18px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 22px;
+            border-radius: 9px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid #ddd;
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            background: #6d3df5;
+            color: white;
+            border-color: #6d3df5;
+        }
+
+        .btn-primary:hover {
+            background: #5830d5;
+        }
+
+        .btn-secondary:hover {
+            border-color: #6d3df5;
+            color: #6d3df5;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 85px 0;
+        }
+
+        .section-title {
+            margin-bottom: 40px;
+        }
+
+        .section-title small {
+            color: #6d3df5;
+            font-weight: 700;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-top: 8px;
+            letter-spacing: -1px;
+        }
+
+        .section-title p {
+            color: #666;
+            margin-top: 10px;
+            max-width: 650px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .about-card {
+            padding: 30px;
+            border: 1px solid #e9e9e9;
+            border-radius: 18px;
+            background: #fafafa;
+        }
+
+        .about-card h3 {
+            margin-bottom: 18px;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 14px;
+        }
+
+        .info:last-child {
+            border-bottom: none;
+        }
+
+        .info span:first-child {
+            color: #777;
+        }
+
+        .info span:last-child {
+            font-weight: 600;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            padding: 9px 15px;
+            border: 1px solid #e4e4e4;
+            border-radius: 8px;
+            background: white;
+            font-size: 14px;
+        }
+
+        .skill:hover {
+            border-color: #6d3df5;
+            color: #6d3df5;
+        }
+
+        /* EXPERIENCE */
+
+        .timeline {
+            border-left: 2px solid #eee;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #6d3df5;
+            border-radius: 50%;
+            left: -36px;
+            top: 8px;
+        }
+
+        .timeline-item h3 {
+            font-size: 19px;
+        }
+
+        .timeline-item .date {
+            color: #6d3df5;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .timeline-item p {
+            color: #666;
+            margin-top: 7px;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            border: 1px solid #e8e8e8;
+            border-radius: 18px;
+            padding: 27px;
+            transition: 0.25s;
+            background: #fff;
+        }
+
+        .project:hover {
+            transform: translateY(-4px);
+            border-color: #d5c8ff;
+            box-shadow: 0 15px 40px rgba(50,30,100,0.07);
+        }
+
+        .project-number {
+            color: #6d3df5;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .project h3 {
+            margin: 8px 0;
+            font-size: 22px;
+        }
+
+        .project p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .tech {
+            margin-top: 18px;
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+        }
+
+        .tech span {
+            background: #f5f3ff;
+            color: #6340d7;
+            padding: 5px 9px;
+            border-radius: 5px;
+            font-size: 11px;
+        }
+
+        /* EDUCATION */
+
+        .education-card {
+            padding: 28px;
+            border: 1px solid #e8e8e8;
+            border-radius: 16px;
+            margin-bottom: 15px;
+        }
+
+        .education-card h3 {
+            margin-bottom: 5px;
+        }
+
+        .education-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* CODEXPETRA */
+
+        .codexpetra {
+            background: #faf9ff;
+            border: 1px solid #eee9ff;
+            border-radius: 24px;
+            padding: 55px;
+            text-align: center;
+        }
+
+        .codexpetra h2 {
+            font-size: 40px;
+            color: #6d3df5;
+        }
+
+        .codexpetra p {
+            max-width: 700px;
+            margin: 15px auto 25px;
+            color: #666;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            text-align: center;
+            padding: 55px 20px;
+            border: 1px solid #e8e8e8;
+            border-radius: 20px;
+        }
+
+        .contact-box h2 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .contact-box p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #eee;
+            padding: 30px 0;
+            color: #777;
+            font-size: 13px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 768px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .about-grid,
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .codexpetra {
+                padding: 35px 20px;
+            }
+
+            .codexpetra h2 {
+                font-size: 32px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="container nav-content">
+
+        <a href="#" class="logo">Rafik Shah</a>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="container">
+
+        <div class="tag">
+            Technical Educator · Developer · Founder
+        </div>
+
+        <h1>
+            Building technology.<br>
+            <span>Teaching skills.</span>
+        </h1>
+
+        <p>
+            I'm Rafik Shah, a Technical Educator, Software Developer,
+            and Founder of CodexPetra. I build technology while helping
+            students develop practical programming and problem-solving skills.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#projects" class="btn btn-primary">
+                View My Work
+            </a>
+
+            <a href="#contact" class="btn btn-secondary">
+                Get In Touch
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+            <small>About Me</small>
+            <h2>Technology meets education.</h2>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-text">
+
+                <p>
+                    I work at the intersection of software development,
+                    technical education, and applied technology.
+                </p>
+
+                <p>
+                    My work involves teaching programming and computer
+                    science concepts, developing software projects, and
+                    building learning experiences that make technical
+                    education more practical and accessible.
+                </p>
+
+                <p>
+                    I am also the founder of CodexPetra, a developer
+                    learning platform focused on programming, coding
+                    practice, aptitude, interviews, hackathons and
+                    career preparation.
+                </p>
+
+            </div>
+
+            <div class="about-card">
+
+                <h3>Quick Profile</h3>
+
+                <div class="info">
+                    <span>Experience</span>
+                    <span>2+ Years</span>
+                </div>
+
+                <div class="info">
+                    <span>Focus</span>
+                    <span>Education & Technology</span>
+                </div>
+
+                <div class="info">
+                    <span>Role</span>
+                    <span>Technical Educator</span>
+                </div>
+
+                <div class="info">
+                    <span>Founder</span>
+                    <span>CodexPetra</span>
+                </div>
+
+                <div class="info">
+                    <span>Location</span>
+                    <span>India</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+            <small>Skills</small>
+            <h2>Tools & Technologies</h2>
+            <p>
+                Technologies I use for teaching, development,
+                data, and building software products.
+            </p>
+        </div>
+
+        <div class="skills">
+
+            <div class="skill">Python</div>
+            <div class="skill">C</div>
+            <div class="skill">C++</div>
+            <div class="skill">Java</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">SQL</div>
+            <div class="skill">React</div>
+            <div class="skill">Vite</div>
+            <div class="skill">Django</div>
+            <div class="skill">Flask</div>
+            <div class="skill">Machine Learning</div>
+            <div class="skill">Data Science</div>
+            <div class="skill">DSA</div>
+            <div class="skill">Git</div>
+            <div class="skill">GitHub</div>
+            <div class="skill">REST APIs</div>
+            <div class="skill">Cloud Deployment</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-title">
+            <small>Experience</small>
+            <h2>My professional journey</h2>
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="date">2024 — Present</div>
+
+                <h3>Technical Educator</h3>
+
+                <p>
+                    Teaching programming, Data Structures and Algorithms,
+                    Python, Machine Learning, Data Science and practical
+                    software development concepts.
+                </p>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="date">Software Development</div>
+
+                <h3>Software Developer</h3>
+
+                <p>
+                    Building web applications, developer tools,
+                    AI-based applications and software solutions using
+                    modern technologies.
+                </p>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="date">Research</div>
+
+                <h3>Research & Applied AI</h3>
+
+                <p>
+                    Worked on machine learning and forecasting projects
+                    involving real-world datasets and predictive models.
+                </p>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <div class="date">Founder</div>
+
+                <h3>CodexPetra</h3>
+
+                <p>
+                    Building an education platform designed to help
+                    students learn programming, practice coding,
+                    prepare for interviews and participate in hackathons.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+            <small>Projects</small>
+            <h2>Things I've built</h2>
+            <p>
+                Selected projects combining software development,
+                artificial intelligence and education.
+            </p>
+        </div>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <div class="project-number">01</div>
+
+                <h3>CodexPetra</h3>
+
+                <p>
+                    A developer learning platform offering tutorials,
+                    coding practice, online compilation, aptitude,
+                    test series, hackathons and interview preparation.
+                </p>
+
+                <div class="tech">
+                    <span>React</span>
+                    <span>Django</span>
+                    <span>Python</span>
+                    <span>Judge0</span>
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-number">02</div>
+
+                <h3>WindCast AI</h3>
+
+                <p>
+                    A short-term wind power forecasting application
+                    using machine learning and weather data to predict
+                    future wind power generation.
+                </p>
+
+                <div class="tech">
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>XGBoost</span>
+                    <span>Machine Learning</span>
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-number">03</div>
+
+                <h3>AgriSense</h3>
+
+                <p>
+                    An AI-powered agriculture application designed to
+                    provide crop-related assistance and useful
+                    information for farmers.
+                </p>
+
+                <div class="tech">
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>Supabase</span>
+                    <span>AI</span>
+                </div>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-number">04</div>
+
+                <h3>Femina Skin Clinic & Academy</h3>
+
+                <p>
+                    A digital platform for clinic and academy operations,
+                    including admissions, bookings, billing and customer
+                    communication workflows.
+                </p>
+
+                <div class="tech">
+                    <span>React</span>
+                    <span>Django</span>
+                    <span>APIs</span>
+                    <span>Automation</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CODEXPETRA -->
+
+<section>
+
+    <div class="container">
+
+        <div class="codexpetra">
+
+            <div class="tag">Founder</div>
+
+            <h2>CodexPetra</h2>
+
+            <p>
+                A learning platform I am building to make technical
+                education more practical through coding practice,
+                tutorials, assessments, hackathons and career-focused
+                preparation.
+            </p>
+
+            <a href="https://codexpetra.com"
+               target="_blank"
+               class="btn btn-primary">
+                Visit CodexPetra
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-title">
+            <small>Education</small>
+            <h2>Academic background</h2>
+        </div>
+
+        <div class="education-card">
+
+            <h3>Postgraduate Studies</h3>
+
+            <p>
+                Savitribai Phule Pune University · Expected 2026
+                · Grade A
+            </p>
+
+        </div>
+
+        <div class="education-card">
+
+            <h3>B.Tech in Information Technology</h3>
+
+            <p>
+                Dr. Babasaheb Ambedkar Technological University · 2024
+                · 77% · CGPA 8.10
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <h2>Let's build something useful.</h2>
+
+            <p>
+                Interested in technology, education, software development,
+                or collaboration? Feel free to connect.
+            </p>
+
+            <div class="buttons">
+
+                <!-- Replace these links with your actual profiles -->
+
+                <a href="mailto:YOUR_EMAIL@example.com"
+                   class="btn btn-primary">
+                    Email Me
+                </a>
+
+                <a href="https://github.com/RAFIKSHA"
+                   target="_blank"
+                   class="btn btn-secondary">
+                    GitHub
+                </a>
+
+                <a href="YOUR_LINKEDIN_URL"
+                   target="_blank"
+                   class="btn btn-secondary">
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container footer-content">
+
+        <div>
+            © <span id="year"></span> Rafik Shah. All rights reserved.
+        </div>
+
+        <div>
+            Technical Educator · Developer · Founder
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+</script>
+
+</body>
+</html>
